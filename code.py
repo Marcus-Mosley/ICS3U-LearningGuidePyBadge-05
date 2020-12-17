@@ -25,7 +25,7 @@ def game_scene():
                             constants.SCREEN_GRID_Y)
 
     # a sprite that will be updated every frame
-    ship = stage.Sprite(image_bank_sprites, constants.TOTAL_NUMBER_OF_ALIENS,
+    ship = stage.Sprite(image_bank_sprites, 5,
                         75, constants.SCREEN_Y - (2 * constants.SPRITE_SIZE))
 
     # create a stage for the background to show up on
@@ -33,8 +33,8 @@ def game_scene():
     game = stage.Stage(ugame.display, constants.FPS)
     # set the layers of all sprites, items show up in order
     game.layers = [ship] + [background]
-    # render all sprites
-    #    most likely you will only render the background once per game scene
+    # render the background and initial location of sprite list
+    # most likely you will only render the background once per game scene
     game.render_block()
 
     # repeat forever, game loop
